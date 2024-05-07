@@ -60,5 +60,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         && rm -rf /var/lib/apt/lists/*
 
 RUN echo "source $ROS2_WS/install/setup.bash" >> /root/.bash_history
-RUN echo "colcon build --event-handlers console_direct+" >> /root/.bash_history
+RUN echo "colcon test --event-handlers console_direct+ --packages-select launch" >> /root/.bash_history
 RUN echo "colcon build --event-handlers console_direct+ --symlink-install --packages-select launch" >> /root/.bash_history
+RUN echo "colcon build --event-handlers console_direct+" >> /root/.bash_history
